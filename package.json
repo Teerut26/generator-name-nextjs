@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
+    "buffer-image-size": "^0.6.4",
     "canvas": "^2.8.0",
     "fs": "0.0.1-security",
     "next": "11.0.1",

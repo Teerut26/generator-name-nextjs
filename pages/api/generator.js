@@ -12,6 +12,8 @@ registerFont(filePath, {
   family: "THSarabunNew",
 });
 
+var sizeOf = require('buffer-image-size');
+
 // https://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript
 const formatBytes = (bytes, decimals = 2) => {
   if (bytes === 0) return "0 Bytes";
@@ -66,9 +68,10 @@ export default async function handler(req, res) {
     let image = await loadImage(filePath);
     context.drawImage(image, 100, 100, 338, 424);
     const base64 = canvas.toDataURL("image/png");
+    const buffer = canvas.toBuffer("image/png");
+    var dimensions = sizeOf(buffer);
     res.send({
-      size: base64.length,
-      size_show: formatBytes(base64.length),
+      size: `${dimensions.width}x${dimensions.height}`,
       image: base64,
     });
   } else {
