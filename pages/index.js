@@ -109,7 +109,7 @@ export default function Home() {
               <form onSubmit={submit}>
                 <div classname="mb-3">
                   <select
-                    class="form-select mb-3"
+                    className="form-select mb-3"
                     aria-label="Default select example"
                     onChange={(v) =>
                       v.target.value !== "เลือกคำนำหน้า"
@@ -122,7 +122,7 @@ export default function Home() {
                     <option value={"นางสาว"}>นางสาว</option>
                   </select>
                   <select
-                    class="form-select"
+                    className="form-select"
                     aria-label="Default select example"
                     onChange={(v) =>
                       v.target.value !== "เลือกรหัสวิชา"

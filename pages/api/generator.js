@@ -64,8 +64,8 @@ export default async function handler(req, res) {
     context.fillText(line4, 2060, 1650);
     context.strokeStyle = "#969696";
     context.strokeRect(0, 0, 4200, 1890);
-    const filePath = path.join(process.cwd(), `/public/image/image2vector.svg`);
-    let image = await loadImage(filePath);
+    // const filePath = path.join(process.cwd(), `/image2vector.svg`);
+    let image = await loadImage("https://upload.wikimedia.org/wikipedia/th/3/37/Visut_logo.png");
     context.drawImage(image, 100, 100, 338, 424);
     const base64 = canvas.toDataURL("image/png");
     const buffer = canvas.toBuffer("image/png");
