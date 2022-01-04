@@ -3,12 +3,12 @@ const fs = require("fs");
 var qs = require("qs");
 import path from "path";
 
-const filePath = path.join(process.cwd(), `/public/font/THSarabunNew Bold.ttf`);
+// const filePath = path.join(process.cwd(), `/public/font/THSarabunNew Bold.ttf`);
 
 // const filePath = path.resolve('.', 'font/THSarabunNew Bold.ttf')
 const { createCanvas, loadImage } = require("canvas");
 const { registerFont } = require("canvas");
-registerFont(filePath, {
+registerFont("https://generator-name-nextjs.vercel.app/font/THSarabunNew%20Bold.ttf", {
   family: "THSarabunNew",
 });
 
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
     context.strokeStyle = "#969696";
     context.strokeRect(0, 0, 4200, 1890);
     // const filePath = path.join(process.cwd(), `/image2vector.svg`);
-    let image = await loadImage("https://upload.wikimedia.org/wikipedia/th/3/37/Visut_logo.png");
+    let image = await loadImage("https://generator-name-nextjs.vercel.app/image/image2vector.svg");
     context.drawImage(image, 100, 100, 338, 424);
     const base64 = canvas.toDataURL("image/png");
     const buffer = canvas.toBuffer("image/png");
